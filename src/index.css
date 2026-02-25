@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom base styles ── */
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 transition-colors duration-300;
+  }
+
+  .dark body,
+  body.dark {
+    @apply bg-dark-bg text-slate-100;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar         { width: 6px; }
+  ::-webkit-scrollbar-track   { @apply bg-slate-100 dark:bg-dark-surface; }
+  ::-webkit-scrollbar-thumb   { @apply bg-primary-500 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-primary-600; }
+}
+
+/* ── Utility component classes ── */
+@layer components {
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-purple-500 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  /* Glow card */
+  .glow-card {
+    @apply relative overflow-hidden rounded-2xl border border-slate-200 dark:border-dark-border
+           bg-white dark:bg-dark-card transition-all duration-300
+           hover:border-primary-400 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)];
+  }
+
+  /* Glass morphism card */
+  .glass-card {
+    @apply rounded-2xl border border-white/20 dark:border-white/10
+           bg-white/60 dark:bg-dark-surface/60 backdrop-blur-md;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply text-3xl sm:text-4xl font-bold text-center mb-4;
+  }
+
+  /* Section sub-heading */
+  .section-subheading {
+    @apply text-slate-500 dark:text-slate-400 text-center text-lg mb-12;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
+           bg-gradient-to-r from-primary-600 to-purple-600
+           hover:from-primary-500 hover:to-purple-500
+           shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50
+           transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  /* Secondary (outline) button */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold
+           border-2 border-primary-500 text-primary-500
+           hover:bg-primary-500 hover:text-white
+           transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  /* Tag / badge */
+  .tech-badge {
+    @apply inline-block px-3 py-1 text-xs font-medium rounded-full
+           bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300;
+  }
+}
+
+/* ── Animated background gradient ── */
+.hero-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: 300% 300%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* ── Timeline connector ── */
+.timeline-connector::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+}
+
+/* ── Progress bar shimmer ── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.progress-shimmer {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
