@@ -1,6 +1,6 @@
 // Portfolio data — update these values with your real information
 export const personalInfo = {
-    name: 'Shashil Kamira Wittahachchi',
+    name: 'Shashil Kasmira Wittahachchi',
     title: 'IT Undergraduate | Web Developer | Project Management Enthusiast',
     bio: 'Passionate IT undergraduate with a strong foundation in full-stack web development. I love building elegant, efficient solutions and turning complex ideas into clean, user-friendly applications.',
     email: 'dskwittahachchi@gmail.com',

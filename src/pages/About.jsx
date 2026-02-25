@@ -36,7 +36,7 @@ export default function About() {
                             <div className="w-48 h-48 rounded-3xl overflow-hidden shadow-2xl shadow-primary-500/30 ring-4 ring-primary-500/40">
                                 <img
                                     src="/profile.png"
-                                    alt="Shashil Kamira Wittahachchi"
+                                    alt="Shashil Kasmira Wittahachchi"
                                     className="w-full h-full object-cover object-top"
                                 />
                             </div>
